@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6454177743017910462}
   - component: {fileID: 8156346058237294146}
   - component: {fileID: -6973608496091373008}
+  - component: {fileID: -3127092262181600372}
   m_Layer: 0
   m_Name: ObjectBlue
   m_TagString: Untagged
@@ -126,3 +127,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 300
   _downSpeed: 20
+--- !u!114 &-3127092262181600372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624556976564103097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a90c6d6c646b84491dc9d4a11a9ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: f7d08bba3612e0d43aa3580d52204327, type: 2}

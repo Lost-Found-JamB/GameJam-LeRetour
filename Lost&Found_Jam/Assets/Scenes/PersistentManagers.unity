@@ -284,9 +284,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upRed: 273
   _downBlue: 274
-  _leftYellow: 276
   _rightGreen: 275
+  _leftYellow: 276
   _space: 32
+  _OneRed: 49
+  _TwoBlue: 50
+  _ThreeGreen: 51
+  _FourYellow: 52
 --- !u!4 &1968716392
 Transform:
   m_ObjectHideFlags: 0

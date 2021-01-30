@@ -16,7 +16,7 @@ public static class GameStateHelper
                 sceneName = "MainMenu";
                 break;
             case EGameState.GAME:
-                sceneName = "Game";
+                sceneName = "AdrienRealm";
                 break;
         }
         return sceneName;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 493126154450759058}
   - component: {fileID: -208107337456720165}
   - component: {fileID: -8898899648738806171}
+  - component: {fileID: 1738583473114880428}
   m_Layer: 0
   m_Name: ObjectRed
   m_TagString: Untagged
@@ -126,3 +127,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 300
   _downSpeed: 20
+--- !u!114 &1738583473114880428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282986241719614031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a90c6d6c646b84491dc9d4a11a9ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: 3c57b17cf3f5ce7498012adc267f80ae, type: 2}
