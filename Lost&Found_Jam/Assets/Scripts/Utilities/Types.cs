@@ -12,6 +12,7 @@ public enum EGameState
     LOADING,
     MAINMENU,
     GAME,
+    GAMEOVER,
     NONE
 }
 

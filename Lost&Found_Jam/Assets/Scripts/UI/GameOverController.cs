@@ -5,13 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
+    [SerializeField] private int _error = 0;
+    [SerializeField] private GameObject _gameOverScreen = null;
+    [SerializeField] private GameObject _spawner = null;
+
+    private bool _gameIsOver = false;
+
+    public void AddError()
+    {
+        _error++;
+        if (_error >= 5)
+        {
+            _gameIsOver = true;
+            _gameOverScreen.SetActive(true);
+            _spawner.SetActive(false);
+        }
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene("Game");
+
+        GameStateManager.Instance.LaunchTransition(EGameState.GAME);
     }
         
     public void Menu()
     {
-        SceneManager.LoadScene("MainMenu");
+        GameStateManager.Instance.LaunchTransition(EGameState.MAINMENU);
+    }
+
+    public bool GameIsOver()
+    {
+        return _gameIsOver;
     }
 }
