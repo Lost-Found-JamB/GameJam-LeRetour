@@ -11,7 +11,16 @@ public class ObjectController : MonoBehaviour
     private string _objectColor = "";
     private string _objectType = "";
     private bool _test = false;
+    private bool _isDone = false;
     #endregion Fields
+
+    #region Properties
+    public bool IsDone
+    {
+        get => _isDone;
+        set => _isDone = value;
+    }
+    #endregion Properties
 
     #region Methodes
     // Start is called before the first frame update
@@ -69,6 +78,7 @@ public class ObjectController : MonoBehaviour
                 Debug.Log("Color: " + _objectColor + " | ERROR !");
             }
             _item.Remove(_item[1]);
+            _isDone = true;
         }
     }
 
@@ -88,6 +98,16 @@ public class ObjectController : MonoBehaviour
                 Debug.Log("Type: " + _objectType + " | NO EFFECT");
             }
         }
+    }
+
+    public void AddItem(ItemProperties value)
+    {
+        _item.Add(value);
+    }
+
+    public void RemoveItem(ItemProperties value)
+    {
+        _item.Remove(value);
     }
     #endregion Methodes
 }

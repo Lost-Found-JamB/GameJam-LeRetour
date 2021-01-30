@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Red Box
   _transform: {fileID: 0}
-  _maxCapacity: 4
+  _maxCapacity: 14
+  _capacity: 0
   _color: 0
   _state: 0

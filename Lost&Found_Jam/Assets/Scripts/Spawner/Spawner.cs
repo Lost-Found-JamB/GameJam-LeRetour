@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _gameObjectsToSpawn = null;
+    [SerializeField] private ObjectMovement[] _gameObjectsToSpawn = null;
     [SerializeField] private float _spawnRateMin = 1f;
     [SerializeField] private float _spawnRateMax = 1f;
     [SerializeField] private Transform _objectContainer = null;
+    [SerializeField] private ObjectController _objectController = null;
 
     private float _spawnRate = 0f;
     private int _objectType = 0;
@@ -32,13 +33,16 @@ public class Spawner : MonoBehaviour
     private void RandomGenerator()
     {
         _spawnRate = Random.Range(_spawnRateMin, _spawnRateMax);
-        _objectType = Random.Range(1, 4);
+        _objectType = Random.Range(0, 4);
     }
 
     private void Spawn()
     {
-        GameObject ObjectClone = Instantiate(_gameObjectsToSpawn[_objectType], transform.position, transform.rotation, _objectContainer);
+        ObjectMovement ObjectClone = Instantiate(_gameObjectsToSpawn[_objectType], transform.position, transform.rotation, _objectContainer);
+        _objectController.AddItem(ObjectClone.GetComponent<ItemProperties>());
+        ObjectClone.Init(_objectController);
         _timeStamp = 0;
-        _objectType = Random.Range(1, 4);
+        _spawnRate = Random.Range(_spawnRateMin, _spawnRateMax);
+        _objectType = Random.Range(0, 4);
     }
 }

@@ -9,12 +9,7 @@ public class ObjectMovement : MonoBehaviour
 
     private Rigidbody _rb = null;
     private bool _isOut = false;
-
-    public Rigidbody Rb
-    {
-        get => _rb;
-        set => _rb = value;
-    }
+    private ObjectController _obectController = null;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +34,16 @@ public class ObjectMovement : MonoBehaviour
         {
             _rb.velocity = Vector3.right * _moveSpeed * Time.deltaTime;
         }
+
+        if(_obectController.IsDone)
+        {
+            Destroy(gameObject);
+            _obectController.IsDone = false;
+        }
+    }
+
+    public void Init(ObjectController objectController)
+    {
+        _obectController = objectController;
     }
 }
