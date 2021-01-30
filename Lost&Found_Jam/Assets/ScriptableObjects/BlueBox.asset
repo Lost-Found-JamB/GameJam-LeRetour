@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e119165d47c1064bb97f99138e16e9a, type: 3}
+  m_Name: BlueBox
+  m_EditorClassIdentifier: 
+  _name: Blue Box
+  _transform: {fileID: 0}
+  _maxCapacity: 10
+  _color: 2
+  _state: 0
