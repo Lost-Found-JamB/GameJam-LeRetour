@@ -33,7 +33,6 @@ public class ScoreInGameScript : MonoBehaviour
             scoreValue += 100;
             boxValue += 1;
             itemValue += 1;
-           
 
             _score.text = "Your score is " + scoreValue;
             Debug.Log("Box : " + boxValue);

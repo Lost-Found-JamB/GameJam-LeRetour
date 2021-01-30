@@ -48,6 +48,7 @@ public enum BoxStates
     NOTFULL,
     ALMOSTFULL,
     FULL,
+    HALFFULL,
     SEND,
     NONE
 }

@@ -44,13 +44,21 @@ public class BoxController : MonoBehaviour
 
         if (_capacity == _maxCapacity)
         {
-            _state = "FULL";
+            _box[boxNb].AlmostToFull();
             _box[boxNb].SetBoxState(BoxStates.FULL);
+            _state = "FULL";
         }
         else if (_capacity == _maxCapacity - 1)
         {
-            _state = "ALMOSTFULL";
+            _box[boxNb].HalfToAlmost();
             _box[boxNb].SetBoxState(BoxStates.ALMOSTFULL);
+            _state = "ALMOSTFULL";
+        }
+        else if (_capacity == _maxCapacity/2)
+        {
+            _box[boxNb].EmptyToHalf();
+            _box[boxNb].SetBoxState(BoxStates.HALFFULL);
+            _state = "HALFFULL";
         }
         Debug.Log(_state);
         return true;
@@ -60,24 +68,28 @@ public class BoxController : MonoBehaviour
     {
         if (Input.GetKeyDown(InputManager.Instance.OneR))
         {
+            _box[0].ToClosed();
             _box[0].SetBoxState(BoxStates.SEND);
             StartCoroutine(Sending(0));
             //score up;
         }
         else if (Input.GetKeyDown(InputManager.Instance.TwoB))
         {
+            _box[1].ToClosed();
             _box[1].SetBoxState(BoxStates.SEND);
             StartCoroutine(Sending(1));
             //score up;
         }
         else if (Input.GetKeyDown(InputManager.Instance.ThreeG))
         {
+            _box[2].ToClosed();
             _box[2].SetBoxState(BoxStates.SEND);
             StartCoroutine(Sending(2));
             //score up;
         }
         else if (Input.GetKeyDown(InputManager.Instance.FourY))
         {
+            _box[3].ToClosed();
             _box[3].SetBoxState(BoxStates.SEND);
             StartCoroutine(Sending(3));
             //score up;
@@ -89,33 +101,8 @@ public class BoxController : MonoBehaviour
         yield return new WaitForSeconds(_timer);
         _box[i].SetBoxCapacity(0);
         _box[i].SetBoxState(BoxStates.NOTFULL);
+        _box[i].ClosedToEmpty();
     }
-
-    /*void CheckBoxColor()
-    {
-        if (_item.Count > 1)
-        {
-            _objectColor = _item[1].GetObjColor();
-            if (_objectColor == color || _objectColor == "NEUTRAL")
-            {
-                _test = _boxController.BoxValidator(box);
-                if (_test)
-                {
-                    Debug.Log("Color: " + _objectColor + " | SUCCESS !");
-                }
-                else
-                {
-                    Debug.Log("Color: " + _objectColor + " | ERROR !");
-                }
-            }
-            else
-            {
-                Debug.Log("Color: " + _objectColor + " | ERROR !");
-            }
-            _item.Remove(_item[1]);
-        }
-    }*/
-
 
     #endregion Methodes
 }
