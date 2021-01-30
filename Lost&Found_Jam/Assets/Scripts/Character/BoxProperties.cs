@@ -9,6 +9,8 @@ public class BoxProperties : MonoBehaviour
 
     private string _boxColor = "";
     private string _state = "";
+    private int _capacity = 0;
+    private int _maxCapacity = 10;
     #endregion Fields
 
     #region Properties
@@ -20,6 +22,26 @@ public class BoxProperties : MonoBehaviour
     public string GetBoxState()
     {
         return _box.GetBoxState();
+    }
+
+    public void SetBoxState(BoxStates state)
+    {
+        _box.SetBoxState(state);
+    }
+
+    public int GetBoxMaxCapacity()
+    {
+        return _box.GetBoxMaxCapacity();
+    }
+
+    public int GetBoxCapacity()
+    {
+        return _box.GetBoxCapacity();
+    }
+
+    public void SetBoxCapacity(int capacity)
+    {
+        _box.SetBoxCapacity(capacity);
     }
     #endregion Properties
 

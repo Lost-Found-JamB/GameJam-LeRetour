@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e119165d47c1064bb97f99138e16e9a, type: 3}
-  m_Name: RedBox
+  m_Script: {fileID: 11500000, guid: 9e2ee0d84e7efb047917eb9db3fc88ab, type: 3}
+  m_Name: MissingNoObject
   m_EditorClassIdentifier: 
-  _name: Red Box
-  _transform: {fileID: 0}
-  _maxCapacity: 4
-  _color: 0
-  _state: 0
+  _name: Missing No
+  _sprite: {fileID: 0}
+  _color: 5
+  _type: 3

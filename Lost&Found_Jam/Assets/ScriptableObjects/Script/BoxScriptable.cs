@@ -9,6 +9,7 @@ public class BoxScriptable : ScriptableObject
     [SerializeField] private string _name = "New Box";
     [SerializeField] private Transform _transform = null;
     [SerializeField] private int _maxCapacity = 10;
+    [SerializeField] private int _capacity = 0;
     [SerializeField] private BoxColor _color = BoxColor.NONE;
     [SerializeField] private BoxStates _state = BoxStates.NONE;
     #endregion Fields
@@ -27,6 +28,26 @@ public class BoxScriptable : ScriptableObject
     public string GetBoxState()
     {
         return _state.ToString();
+    }
+
+    public void SetBoxState(BoxStates state)
+    {
+        _state = state;
+    }
+
+    public int GetBoxMaxCapacity()
+    {
+        return _maxCapacity;
+    }
+
+    public int GetBoxCapacity()
+    {
+        return _capacity;
+    }
+
+    public void SetBoxCapacity(int capacity)
+    {
+        _capacity = capacity;
     }
     #endregion Properties
 }

@@ -287,7 +287,6 @@ MonoBehaviour:
   _leftYellow: 276
   _rightGreen: 275
   _space: 32
-  _item: {fileID: 0}
 --- !u!4 &1968716392
 Transform:
   m_ObjectHideFlags: 0
