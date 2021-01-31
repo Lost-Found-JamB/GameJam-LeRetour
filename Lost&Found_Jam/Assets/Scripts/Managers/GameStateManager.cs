@@ -40,6 +40,10 @@ public class GameStateManager : Singleton<GameStateManager>
         gameState.Initialize(EGameState.GAME);
         _states.Add(EGameState.GAME, gameState);
 
+        GameOverState gameOverState = new GameOverState();
+        gameOverState.Initialize(EGameState.GAMEOVER);
+        _states.Add(EGameState.GAMEOVER, gameOverState);
+
         _currentState = EGameState.INITIALIZE;
         CurrentState.EnterState();
     }

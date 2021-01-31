@@ -7,6 +7,7 @@ public class ObjectController : MonoBehaviour
     #region Fields
     [SerializeField] private List<ItemProperties> _item = null;
     [SerializeField] private BoxController _boxController = null;
+    [SerializeField] private GameOverController _gameOverController = null;
 
     private string _objectColor = "";
     private string _objectType = "";
@@ -70,12 +71,13 @@ public class ObjectController : MonoBehaviour
                 else
                 {
                     Debug.Log("Color: " + _objectColor + " | ERROR !");
-                    //_box[box].SetBoxState(BoxStates.ERROR);
+                    _gameOverController.AddError();
                 }
             }
             else
             {
                 Debug.Log("Color: " + _objectColor + " | ERROR !");
+                _gameOverController.AddError();
             }
             _item.Remove(_item[1]);
             _isDone = true;
