@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4aad15b8990195e4eb8bc222b362b6fb
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 4dc484050dfc70348ad615a109b0f909
-  - enabled: 1
     path: Assets/Scenes/AdrienRealm.unity
     guid: 4fc646ab5fa663543bebdb0b4051def6
   m_configObjects: {}
