@@ -6,8 +6,9 @@ public class BoxController : MonoBehaviour
 {
     #region Fields
     [SerializeField] private List<BoxProperties> _box = null;
-    [SerializeField] private float _timer = 3f;
+    [SerializeField] private float _timerBrut = 3f;
     [SerializeField] private ScoreInGameScript _score = null;
+    [SerializeField] private SpeedController _speedController = null;
 
     private string _boxColor = "";
     private string _state = "";
@@ -22,7 +23,7 @@ public class BoxController : MonoBehaviour
     #region Methodes
     private void Start()
     {
-        for(int i = 0; i<_box.Count; i++)
+        for (int i = 0; i<_box.Count; i++)
         {
             _state = _box[i].GetBoxState();
         }
@@ -67,6 +68,7 @@ public class BoxController : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(_clock.GetTimeStamp());
         if (Input.GetKeyDown(InputManager.Instance.OneR))
         {
             _box[0].ToClosed();
@@ -103,7 +105,7 @@ public class BoxController : MonoBehaviour
         bool boxIsFull = (itemToScore == _box[i].GetBoxMaxCapacity());
         bool boxIsAlmostFull = (itemToScore == _box[i].GetBoxMaxCapacity()/2);
 
-        yield return new WaitForSeconds(_timer);
+        yield return new WaitForSeconds(_timerBrut);
         _score.Score(itemToScore, boxIsFull, boxIsAlmostFull);
         _box[i].SetBoxCapacity(0);
         _box[i].SetBoxState(BoxStates.NOTFULL);
