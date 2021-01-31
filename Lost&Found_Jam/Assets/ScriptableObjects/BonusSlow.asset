@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e2ee0d84e7efb047917eb9db3fc88ab, type: 3}
-  m_Name: BonusObject
+  m_Name: BonusSlow
   m_EditorClassIdentifier: 
-  _name: Bonus Item
+  _name: BonusSlow
   _sprite: {fileID: 0}
   _color: 0
   _type: 1

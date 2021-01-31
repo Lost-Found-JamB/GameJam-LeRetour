@@ -17,6 +17,11 @@ public class ItemProperties : MonoBehaviour
         return _item.GetObjColor();
     }
 
+    public void SetObjColor(ObjColor color)
+    {
+        _item.SetObjColor(color);
+    }
+
     public string GetObjType()
     {
         return _item.GetObjType();
