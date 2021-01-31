@@ -74,7 +74,7 @@ public class ObjectController : MonoBehaviour
                 _decrementBonus--;
                 if(_decrementMalus <= 0)
                 {
-                    _bonusMalusController.MoreItem();
+                    _bonusMalusController.MoreItem(false);
                 }
             }
 
@@ -120,7 +120,7 @@ public class ObjectController : MonoBehaviour
                 }
                 else if (_item[1].name != "MalusMoreItem(Clone)")
                 {
-                    _bonusMalusController.MoreItem();
+                    _bonusMalusController.MoreItem(true);
                     _decrementMalus = 5;
                 }
                 else if (_item[1].name != "BonusSlow(Clone)")

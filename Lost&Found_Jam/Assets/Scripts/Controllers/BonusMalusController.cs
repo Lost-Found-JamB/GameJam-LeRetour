@@ -76,9 +76,10 @@ public class BonusMalusController : MonoBehaviour
     }
 
     //-Augmente la fréquence d’apparition
-    public void MoreItem()
+    public void MoreItem(bool toggle)
     {
-        if(_toggle == false)
+        _toggle = toggle;
+        if(_toggle)
         {
             _spawner.SpawnRateMax(_spawnRateMax);
         }
