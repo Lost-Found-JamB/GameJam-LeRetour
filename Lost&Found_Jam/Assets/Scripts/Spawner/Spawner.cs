@@ -18,6 +18,16 @@ public class Spawner : MonoBehaviour
     private int _objectType = 0;
     private float _timeStamp = 0f;
 
+    public void SpawnRateMax(float spawnRMax)
+    {
+        _spawnRateMax = spawnRMax;
+    }
+
+    public float GetSpawnRateMax()
+    {
+        return _spawnRateMax;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

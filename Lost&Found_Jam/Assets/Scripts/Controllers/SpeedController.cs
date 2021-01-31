@@ -31,6 +31,6 @@ public class SpeedController : MonoBehaviour
     public void SetMoveSpeed(float value)
     {       
         _moveSpeed += value;
-        Debug.Log("VROOOOOOOOOOOOOOOM : " + _moveSpeed);
+        Debug.Log("VROOOOOOOM : " + _moveSpeed);
     }
 }

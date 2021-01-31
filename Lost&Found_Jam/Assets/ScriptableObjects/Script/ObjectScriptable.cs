@@ -32,6 +32,11 @@ public class ObjectScriptable : ScriptableObject
         return _color.ToString();
     }
 
+    public void SetObjColor(ObjColor color)
+    {
+        _color = color;
+    }
+
     public string GetObjType()
     {
         return _type.ToString();
