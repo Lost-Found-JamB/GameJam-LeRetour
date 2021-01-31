@@ -14,6 +14,7 @@ public class GameOverController : MonoBehaviour
     public void AddError()
     {
         _error++;
+        //set active les X pour les erreurs
         if (_error >= 5)
         {
             _gameIsOver = true;

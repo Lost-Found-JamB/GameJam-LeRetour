@@ -14,4 +14,5 @@ public class DestroyZoneController : MonoBehaviour
         Destroy(other.gameObject);
         Debug.Log(other.name + " est tombé dans la trappe !! ERROR !!");
     }
+
 }

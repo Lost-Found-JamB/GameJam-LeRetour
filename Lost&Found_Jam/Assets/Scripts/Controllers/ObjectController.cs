@@ -8,9 +8,13 @@ public class ObjectController : MonoBehaviour
     [SerializeField] private List<ItemProperties> _item = null;
     [SerializeField] private BoxController _boxController = null;
     [SerializeField] private GameOverController _gameOverController = null;
+    [SerializeField] private BonusMalusController _bonusMalusController = null;
 
+    private int _decrementBonus = 0;
+    private int _decrementMalus = 0;
     private string _objectColor = "";
     private string _objectType = "";
+    private bool _trigger = false;
     private bool _test = false;
     private bool _isDone = false;
     #endregion Fields
@@ -60,6 +64,20 @@ public class ObjectController : MonoBehaviour
     {
         if (_item.Count > 1)
         {
+            if (_decrementBonus > 0)
+            {
+                _item[1].SetObjColor(ObjColor.NEUTRAL);
+                _decrementBonus--;
+            }
+            else if(_decrementMalus > 0)
+            {
+                _decrementBonus--;
+                if(_decrementMalus <= 0)
+                {
+                    _bonusMalusController.MoreItem();
+                }
+            }
+
             _objectColor = _item[1].GetObjColor();
             if (_objectColor == color || _objectColor == "NEUTRAL")
             {
@@ -81,6 +99,7 @@ public class ObjectController : MonoBehaviour
             }
             _item.Remove(_item[1]);
             _isDone = true;
+
         }
     }
 
@@ -91,7 +110,27 @@ public class ObjectController : MonoBehaviour
             _objectType = _item[0].GetObjType();
             if (_objectType == "BONUS" || _objectType == "MALUS")
             {
-                //BoxValidator
+                if (_item[1].name != "BonusCleaner(Clone)")
+                {
+                    _bonusMalusController.ClearTrigger(true);
+                }
+                else if (_item[1].name != "BonusNeutral(Clone)")
+                {
+                    _decrementBonus = 5;
+                }
+                else if (_item[1].name != "MalusMoreItem(Clone)")
+                {
+                    _bonusMalusController.MoreItem();
+                    _decrementMalus = 5;
+                }
+                else if (_item[1].name != "BonusSlow(Clone)")
+                {
+                    _bonusMalusController.SlowDown();
+                }
+                else if (_item[1].name != "MalusSpeedUp(Clone)")
+                {
+                    _bonusMalusController.SpeedUp();
+                }
                 Debug.Log("Type: " + _objectType + " | SUCCESS !");
                 _item.Remove(_item[0]);
             }
