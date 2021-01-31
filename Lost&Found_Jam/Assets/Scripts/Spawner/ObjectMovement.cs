@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 300f;
+    private float _moveSpeed = 0f;
     [SerializeField] private float _downSpeed = 100f;
 
     private Rigidbody _rb = null;
     private bool _isOut = false;
     private ObjectController _obectController = null;
+    private float _speedUp = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _moveSpeed = FindObjectOfType<SpeedController>().GetMoveSpeed();
     }
 
     public void IsOutToggle()
