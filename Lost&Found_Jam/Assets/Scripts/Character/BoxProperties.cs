@@ -12,7 +12,9 @@ public class BoxProperties : MonoBehaviour
     [SerializeField] private GameObject _boxAlmost = null;
     [SerializeField] private GameObject _boxFull = null;
     [SerializeField] private GameObject _boxClosed = null;
+    [SerializeField] private GameObject _boxGlow = null;
 
+    private float _timer = 0.4f;
     private string _boxColor = "";
     private string _state = "";
     private int _capacity = 0;
@@ -84,6 +86,18 @@ public class BoxProperties : MonoBehaviour
     {
         _boxClosed.SetActive(false);
         _boxEmpty.SetActive(true);
+    }
+
+    public void GoodBox()
+    {
+        _boxGlow.SetActive(true);
+        StartCoroutine(Glowing());
+    }
+
+    IEnumerator Glowing()
+    {
+        yield return new WaitForSeconds(_timer);
+        _boxGlow.SetActive(false);
     }
     #endregion Methodes
 

@@ -11,10 +11,10 @@ public class BonusMalusController : MonoBehaviour
     [SerializeField] private ObjectController _objecController = null;
     [SerializeField] private Spawner _spawner = null;
 
-    [SerializeField] private float _speedModifier = 300f;
-    [SerializeField] private float _spawnRateMax = 3f;
-    [SerializeField] private float _savedSpawnRate = 3f;
+    [SerializeField] private float _speedModifier = 25f;
+    [SerializeField] private float _spawnRateMax = 1.5f;
 
+    private float _savedSpawnRate = 3f;
     private bool _toggle = false;
     private bool _trigger = false;
     #endregion Field
@@ -30,7 +30,7 @@ public class BonusMalusController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(ClearTrigger(_trigger) == true)
+        if (ClearTrigger(_trigger) == true)
         {
             ClearCBelt(other);
             _trigger = false;
@@ -79,13 +79,14 @@ public class BonusMalusController : MonoBehaviour
     public void MoreItem(bool toggle)
     {
         _toggle = toggle;
-        if(_toggle)
+        if (_toggle)
         {
             _spawner.SpawnRateMax(_spawnRateMax);
         }
         else
         {
             _spawner.SpawnRateMax(_savedSpawnRate);
+
         }
     }
 

@@ -62,7 +62,8 @@ public class BoxController : MonoBehaviour
             _box[boxNb].SetBoxState(BoxStates.HALFFULL);
             _state = "HALFFULL";
         }
-        Debug.Log(_state);
+        //Debug.Log(_state);
+        _box[boxNb].GoodBox();
         return true;
     }
 
@@ -110,6 +111,15 @@ public class BoxController : MonoBehaviour
         _box[i].SetBoxCapacity(0);
         _box[i].SetBoxState(BoxStates.NOTFULL);
         _box[i].ClosedToEmpty();
+    }
+
+    public void ResetAllBoxes()
+    {
+        for (int i = 0; i < _box.Count; i++)
+        {
+            _box[i].SetBoxState(BoxStates.NOTFULL);
+            _box[i].SetBoxCapacity(0);
+        }
     }
 
     #endregion Methodes

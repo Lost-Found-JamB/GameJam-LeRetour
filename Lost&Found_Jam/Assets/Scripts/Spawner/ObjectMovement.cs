@@ -15,8 +15,15 @@ public class ObjectMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _moveSpeed = FindObjectOfType<SpeedController>().GetMoveSpeed();
+        if (GetComponent<Rigidbody>())
+        {
+            _rb = GetComponent<Rigidbody>();
+            _moveSpeed = FindObjectOfType<SpeedController>().GetMoveSpeed();
+        }
+        else
+        {
+
+        }
     }
 
     public void IsOutToggle()

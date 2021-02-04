@@ -883,9 +883,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3724fec8284e3634c9cae2d9d86e59e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _error: 0
+  _errorCount: 0
   _gameOverScreen: {fileID: 0}
   _spawner: {fileID: 0}
+  _boxController: {fileID: 0}
+  _error1: {fileID: 0}
+  _error2: {fileID: 0}
+  _error3: {fileID: 0}
+  _error4: {fileID: 0}
+  _error5: {fileID: 0}
 --- !u!4 &973599905
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1005729002
 Animator:
   serializedVersion: 3

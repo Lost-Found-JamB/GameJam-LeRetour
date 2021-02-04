@@ -1,2 +1,1 @@
-Assets/Scenes/MainMenu.unity
 Assets/Scenes/AdrienRealm.unity
